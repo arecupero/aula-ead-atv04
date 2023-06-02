@@ -35,15 +35,6 @@ app.get("/readiness", (request, response) => {
     });
 });
 
-app.get("/select", (request, response) => {
-  return response
-    .status(200)
-    .json({
-      message: "Selecionando dados",
-      date: new Date().getTime()
-    });
-});
-
 app.get('/criar-tabela', function (request, response) {
   connection.query(
     `CREATE TABLE ativ04 (
@@ -56,7 +47,7 @@ app.get('/criar-tabela', function (request, response) {
         return response.status(500).json('Erro ao criar tabela');
       }
       else {
-        return response.json(result);
+        return response.json('Tabela criada com sucesso');
       }
     });
 });
